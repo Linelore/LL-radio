@@ -22,7 +22,7 @@ LL-radio is uesd to add a controllable radio with stop, start and next functiona
 		_soungLength = 15;
 	};
 ```
-5. Change "mySoundHere" to the name givneto the sound in the description.ext 
+5. Change "mySoundHere" to the name given to the sound in the description.ext 
 6. Change _soungLength to the length of the sound in seconds
 
 ## License
