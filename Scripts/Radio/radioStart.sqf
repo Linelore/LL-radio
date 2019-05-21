@@ -1,5 +1,5 @@
 _theRadio = _this select 0;
-_soungLength = 0;
+_numberOfSoungs = 2;
 
 
 // Spawning the object the sound will come from
@@ -15,7 +15,7 @@ if (_radioLoop == -1)
 then{
 	_radioLoop = 0;
 };
-if (_radioLoop == 4)
+if (_radioLoop == _numberOfSoungs)
 then{
 	_radioLoop = 1;
 }
@@ -26,6 +26,7 @@ _theRadio setVariable ["radioLoop", _radioLoop, true];
 
 
 // starting the music playing and seting how long the soung lasts
+_soungLength = 0;
 switch (_radioLoop) do {
 	case 1 : {	
 		[_speaker, ["example1",2000,1]] remoteExec ["say3d"];
@@ -35,6 +36,7 @@ switch (_radioLoop) do {
 		[_speaker, ["example2",2000,1]] remoteExec ["say3d"];
 		_soungLength = 15;
 	};
+	// add new soungs here
 };
 
 
