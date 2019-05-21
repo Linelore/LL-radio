@@ -1,0 +1,28 @@
+class CfgSounds
+{
+	sounds[]={};
+	class example1
+	{
+		name="example1";
+		sound[]=
+		{
+			"\sounds\example1.ogg",
+			10,
+			1,
+			1600
+		};
+	  titles[]={};
+  };
+  class example2
+	{
+		name="example2;
+		sound[]=
+		{
+			"\sounds\example2ogg",
+			10,
+			1,
+			1600
+		};
+	  titles[]={};
+  };
+};
