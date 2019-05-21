@@ -12,10 +12,10 @@ LL-radio is uesd to add a controllable radio with stop, start and next functiona
 ```
 
 ### Adding sounds
-1. Place the .oog file in the sounds folder
+1. Place the a .oog file of the sound in the sounds folder
 2. In description.ext add the file to the CfgSounds class list (Check the [wiki](https://community.bistudio.com/wiki/Description.ext#CfgSounds) if unsure how)
-3. In \Scripts\Radio\radioStart.sqf change the value _numberOfSoungs on line 2
-4. In \Scripts\Radio\radioStart.sqf add on line 39.
+3. In \Scripts\Radio\radioStart.sqf on line 2 change the value _numberOfSoungs 
+4. In \Scripts\Radio\radioStart.sqf on line 39 add:
 ```
 	case 3 : {	
 		[_speaker, ["mySoundHere",2000,1]] remoteExec ["say3d"];
