@@ -9,35 +9,32 @@ hideObject _speaker;
 _speaker enableSimulationGlobal false;
 _speaker attachTo [_theRadio];
 
-
-// stating the music playing and seting how loung the soung lasts
-switch (radioLoop) do {
-	case 1 : {	
-		[_speaker, ["relax",2000,1]] remoteExec ["say3d"];
-		_soungLength = 10;
-	};
-	case 2 : {	
-		[_speaker, ["wantMe",2000,1]] remoteExec ["say3d"];
-		_soungLength = 10;
-	};
-	case 3 : {	
-		[_speaker, ["99",2000,1]] remoteExec ["say3d"];
-		_soungLength = 10;
-	};
-	case 4 : {	
-		[_speaker, ["master",2000,1]] remoteExec ["say3d"];
-		_soungLength = 10;
-	};
-};
-
-
-// Controler for neex soung to play
-if (radioLoop == 4)
+// Controler for soung to play
+_radioLoop = _theRadio getVariable ["radioLoop",-1];
+if (_radioLoop == -1)
 then{
-	radioLoop = 1;
+	_radioLoop = 0;
+};
+if (_radioLoop == 4)
+then{
+	_radioLoop = 1;
 }
 else{
-	radioLoop = radioLoop + 1;
+	_radioLoop = _radioLoop + 1;
+};
+_theRadio setVariable ["radioLoop", _radioLoop, true];
+
+
+// starting the music playing and seting how long the soung lasts
+switch (_radioLoop) do {
+	case 1 : {	
+		[_speaker, ["example1",2000,1]] remoteExec ["say3d"];
+		_soungLength = 15;
+	};
+	case 2 : {	
+		[_speaker, ["example2",2000,1]] remoteExec ["say3d"];
+		_soungLength = 15;
+	};
 };
 
 
@@ -51,7 +48,7 @@ _theRadio addAction ["Switch off", "Scripts\Radio\radioEnd.sqf",_speaker];
 sleep _soungLength;
 
 
-// Cleaning Up the speaker and staring the next soung if no user action all ready has.
+// Cleaning Up the speaker and start the next soung if no user action all ready has.
 if (damage _speaker > 0.5)
 then{
 	deleteVehicle _speaker;
