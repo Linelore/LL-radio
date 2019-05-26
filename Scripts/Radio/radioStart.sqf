@@ -1,3 +1,11 @@
+/*
+* Starts playing sounds, manages the selection of the next sound and manages the the object the sound comes form
+*
+* Peraminters:
+*	_theRadio object
+*		Used for UI and location to place the sound
+*/
+
 _theRadio = _this select 0;
 _numberOfSoungs = 2;
 
